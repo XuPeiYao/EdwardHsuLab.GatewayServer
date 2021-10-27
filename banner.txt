@@ -1,0 +1,5 @@
+=================================================
+THIS SERVER ONLY FOR ACCESS TO INTERNAL SERVICES.
+DO NOT SAVE IMPORTANT DATA IN THIS SERVER.
+本伺服器僅供存取內部服務，請勿將重要資料儲存於此。
+=================================================
