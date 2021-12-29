@@ -12,6 +12,7 @@ RUN curl -fsSLo /usr/share/keyrings/kubernetes-archive-keyring.gpg https://packa
 RUN echo "deb [signed-by=/usr/share/keyrings/kubernetes-archive-keyring.gpg] https://apt.kubernetes.io/ kubernetes-xenial main" | tee /etc/apt/sources.list.d/kubernetes.list
 RUN apt update
 RUN apt install -y kubectl
+RUN mkdir ~/.kube
 
 RUN echo "Port 22" >> /etc/ssh/sshd_config
 RUN echo "AddressFamily any" >> /etc/ssh/sshd_config
