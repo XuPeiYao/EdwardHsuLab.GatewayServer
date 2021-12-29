@@ -7,8 +7,11 @@ RUN mkdir /root/.ssh
 RUN chmod 700 /root/.ssh
 RUN apt update
 RUN apt install -y openssh-server
-RUN apt install -y nano
-RUN apt install -y nmap
+RUN apt install -y nano nmap apt-transport-https ca-certificates curl
+RUN curl -fsSLo /usr/share/keyrings/kubernetes-archive-keyring.gpg https://packages.cloud.google.com/apt/doc/apt-key.gpg
+RUN echo "deb [signed-by=/usr/share/keyrings/kubernetes-archive-keyring.gpg] https://apt.kubernetes.io/ kubernetes-xenial main" | sudo tee /etc/apt/sources.list.d/kubernetes.list
+RUN apt update
+RUN apt install -y kubectl
 
 RUN echo "Port 22" >> /etc/ssh/sshd_config
 RUN echo "AddressFamily any" >> /etc/ssh/sshd_config
