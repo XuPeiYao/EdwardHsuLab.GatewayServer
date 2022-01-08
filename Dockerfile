@@ -6,6 +6,7 @@ VOLUME /root/.ssh
 RUN mkdir /root/.ssh
 RUN chmod 700 /root/.ssh
 RUN apt update
+RUN apt install -y dnsutils
 RUN apt install -y openssh-server
 RUN apt install -y nano nmap apt-transport-https ca-certificates curl
 RUN curl -fsSLo /usr/share/keyrings/kubernetes-archive-keyring.gpg https://packages.cloud.google.com/apt/doc/apt-key.gpg
