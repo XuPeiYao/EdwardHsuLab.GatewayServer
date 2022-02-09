@@ -7,6 +7,10 @@ RUN mkdir /root/.ssh
 RUN chmod 700 /root/.ssh
 RUN apt update
 RUN apt install -y dnsutils
+RUN apt install -y iputils-ping
+RUN apt install -y git
+RUN apt install -y python3-dev python3-pip python3-setuptools
+RUN apt install -y bash-completion
 RUN apt install -y openssh-server
 RUN apt install -y nano nmap apt-transport-https ca-certificates curl
 RUN curl -fsSLo /usr/share/keyrings/kubernetes-archive-keyring.gpg https://packages.cloud.google.com/apt/doc/apt-key.gpg
